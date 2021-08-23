@@ -1,0 +1,31 @@
+package Maths;
+
+import java.util.Scanner;
+import java.util.regex.Pattern;
+
+public class Main {
+
+
+    private String match(String input, String[] library){
+
+        for (String s:library){
+       
+         input =  input.replace(s,"");
+        }
+
+        if(input.length()>0)
+            return "no match";
+        else
+            return "match found";
+
+
+    }
+    public static void main(String Args[]){
+     String[] library = {"news","paper","scissor","gate","Chocolate","chip","dex","top","lap"};
+        Scanner scr = new Scanner(System.in);
+        System.out.println("Please enter the word");
+        String input = scr.next();
+        Main m = new Main();
+        System.out.println(  m.match(input,library));
+    }
+}
